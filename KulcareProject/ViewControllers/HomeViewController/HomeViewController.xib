@@ -6,9 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
-                <outlet property="LoginBtnProp" destination="BYc-gj-HC1" id="9Gi-rA-fpr"/>
-                <outlet property="LogoImgview" destination="sFq-Kb-IPC" id="zWc-jK-R6Q"/>
-                <outlet property="SignupBtnProp" destination="nqJ-CB-aV1" id="qxS-5E-S6D"/>
+                <outlet property="btnLogin" destination="BYc-gj-HC1" id="hw7-Tm-brk"/>
+                <outlet property="btnSignUp" destination="nqJ-CB-aV1" id="hkh-Uf-7l6"/>
+                <outlet property="imgViewLogo" destination="sFq-Kb-IPC" id="kyt-t6-6HZ"/>
                 <outlet property="view" destination="40g-yI-LU4" id="Lcp-PT-a5b"/>
             </connections>
         </placeholder>
@@ -26,7 +26,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="SignupBtn:" destination="-1" eventType="touchUpInside" id="pvX-KJ-IyB"/>
+                        <action selector="btnSignUpEvent:" destination="-1" eventType="touchUpInside" id="8pq-T2-Jnr"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BYc-gj-HC1">
@@ -38,7 +38,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="LoginBtn:" destination="-1" eventType="touchUpInside" id="mwZ-U2-6Hp"/>
+                        <action selector="btnLoginEvent:" destination="-1" eventType="touchUpInside" id="z81-Cb-Ky9"/>
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kulcare_logo@3x.png" id="sFq-Kb-IPC">

@@ -11,13 +11,13 @@
 
 @interface HomeViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *LogoImgview;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewLogo;
 
-- (IBAction)SignupBtn:(id)sender;
-- (IBAction)LoginBtn:(id)sender;
+- (IBAction)btnSignUpEvent:(id)sender;
+- (IBAction)btnLoginEvent:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIButton *SignupBtnProp;
-@property (weak, nonatomic) IBOutlet UIButton *LoginBtnProp;
+@property (weak, nonatomic) IBOutlet UIButton *btnSignUp;
+@property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 

@@ -20,24 +20,10 @@
 @end
 
 @implementation HomeViewController
-{
-    CGFloat width;
-    CGFloat height;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
-    NSLog(@"width is %f",  self.view.bounds.size.width);
-    NSLog(@"height is %f",  self.view.bounds.size.height);
-    viewinstance = [[ViewUtility alloc] init];
-    [self.SignupBtnProp setBackgroundColor:[viewinstance colorWithHexString:@"C4C7CD"]];
-    [self.LoginBtnProp setBackgroundColor:[viewinstance colorWithHexString:@"3D83D0"]];
-    [self.SignupBtnProp.layer setBorderColor:[[UIColor whiteColor] CGColor]];
-    self.SignupBtnProp.layer.cornerRadius = 2;
-    [self.LoginBtnProp.layer setBorderColor:[[UIColor whiteColor] CGColor]];
-    self.LoginBtnProp.layer.cornerRadius = 2;
     
     [self setupUI];
     [self setFrame];
@@ -53,18 +39,16 @@
     [self.navigationController setNavigationBarHidden:YES];
 }
 
--(void)setFrame
-{
+-(void)setFrame {
     /*[self.LogoImgview setFrame:CGRectMake(50, 50, 220, 40)];
     [self.SignupBtnProp setFrame:CGRectMake(30, 490, 120, 30)];
     [self.LoginBtnProp setFrame:CGRectMake(170, 490, 120, 30)];*/
     UIImage *signupBtn = [UIImage imageNamed:@"signup_bttn.png"];
-    [_SignupBtnProp setBackgroundImage:signupBtn forState:UIControlStateNormal];
-    [self.view addSubview:_SignupBtnProp];
+    [_btnSignUp setBackgroundImage:signupBtn forState:UIControlStateNormal];
     UIImage *loginBtn = [UIImage imageNamed:@"login_bttn.png"];
-    [_LoginBtnProp setBackgroundImage:loginBtn forState:UIControlStateNormal];
-    [self.view addSubview:_SignupBtnProp];
+    [_btnLogin setBackgroundImage:loginBtn forState:UIControlStateNormal];
 }
+
 - (void)setupUI {
     // Create page view controller
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
@@ -82,13 +66,6 @@
     [self.pageViewController didMoveToParentViewController:self];
 }
 
-- (IBAction)startBtn:(id)sender {
-    
-    WalkThroughViewController *startingViewController = [self viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
-}
-
 - (WalkThroughViewController *)viewControllerAtIndex:(NSUInteger)index
 {
     // Create a new view controller and pass suitable data.
@@ -100,7 +77,6 @@
 }
 
 #pragma mark - Page View Controller Data Source
-
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSUInteger index = ((WalkThroughViewController*) viewController).pageIndex;
@@ -133,15 +109,13 @@
     return 0;
 }
 
-- (IBAction)SignupBtn:(id)sender {
-    
+- (IBAction)btnSignUpEvent:(id)sender {
     SignUpViewController * sign = [[SignUpViewController alloc] initWithNibName:@"SignUpViewController" bundle:nil];
-    //[self presentViewController:sign animated:YES completion:nil];
     [self.navigationController pushViewController:sign animated:YES];
     
 }
 
-- (IBAction)LoginBtn:(id)sender {
+- (IBAction)btnLoginEvent:(id)sender {
     LogInViewController * login = [[LogInViewController alloc] initWithNibName:@"LogInViewController" bundle:nil];
     [self.navigationController pushViewController:login animated:YES];
 }
