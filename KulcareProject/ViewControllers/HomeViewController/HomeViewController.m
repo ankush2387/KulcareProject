@@ -24,6 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSArray *fontFamilies =  [UIFont familyNames];
+    for (NSString *fontFamily in fontFamilies) {
+        NSLog(@"%@",[UIFont fontNamesForFamilyName:fontFamily]);
+    }
     
     [self setupUI];
     [self setFrame];

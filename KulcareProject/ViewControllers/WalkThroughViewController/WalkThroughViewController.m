@@ -59,7 +59,7 @@
 {
     self.lblTitle.numberOfLines = 0;
     self.lblMsg.numberOfLines = 0;
-    //self.lblTitle.font = [UIFont fontWithName:@"ProximaNovaAlt-Bold" size:100];
+    self.lblTitle.font = [UIFont fontWithName:@"ProximaNovaA-Bold" size:18];
     self.lblMsg.font    = [UIFont fontWithName:@"ProximaNova-Regular" size:14];
 }
 - (void)didReceiveMemoryWarning
